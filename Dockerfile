@@ -1,4 +1,4 @@
-FROM php:7.0.17-fpm
+FROM php:7.0-fpm
 
 # Install
 RUN buildDeps=" \
@@ -40,6 +40,4 @@ RUN rm -rf /var/www/html/*
 RUN curl -o magerun https://raw.githubusercontent.com/netz98/n98-magerun/master/n98-magerun.phar && \
     chmod +x ./magerun && \
     cp ./magerun /usr/local/bin/ && \
-    rm ./magerun && \
-    apt-get update && \
-    apt-get install -qy mysql-client
+    rm ./magerun
